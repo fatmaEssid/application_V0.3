@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FinalClientService } from '../shared/final-client.service';
-import { ToastrService } from 'ngx-toastr';
+
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { MatSnackBar } from '@angular/material';
@@ -14,7 +14,7 @@ export class FinalClientComponent implements OnInit {
 
  
   constructor(private service:FinalClientService,
-    private toastr:ToastrService, private router:Router,
+    private router:Router,
     public snackBar: MatSnackBar) { }
 
 
@@ -39,12 +39,15 @@ export class FinalClientComponent implements OnInit {
     this.service.saveOrUpdateOrder().subscribe(res=> {
       this.resetForm();
       this.openSnackBar('FINAL CLIENT', 'Bien Enregistrée');
-      this.router.navigate(['/factures']);
+      this.router.navigate(['/final-clients']);
     });
     }
     openSnackBar(message: string, action: string) {
       this.snackBar.open(message, action, {
-         duration: 2000,
+         duration: 4000,
+         verticalPosition: 'top',
+        
+         
       });
    } 
   

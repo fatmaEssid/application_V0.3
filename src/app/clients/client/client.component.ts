@@ -79,13 +79,15 @@ export class ClientComponent implements OnInit {
         this.service.saveOrUpdateClient().subscribe(res => {
         this.resetForm();
         this.openSnackBar('CLIENT', 'Submitted Successfully');
-        this.router.navigate(['/factures']);
+        this.router.navigate(['/clients']);
       })
     
   }
   openSnackBar(message: string, action: string) {
     this.snackBar.open(message, action, {
        duration: 2000,
+       verticalPosition: 'top',
+    
     });
  } 
 

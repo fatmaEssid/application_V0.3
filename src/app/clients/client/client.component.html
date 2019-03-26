@@ -35,12 +35,21 @@
             <input name="client_siret" #client_siret="ngModel" [(ngModel)]="service.formData.client_siret" class="form-control" >
      
          </div>
-          <div class="form-group col-md-3">
-     
-        <label >TVA
-        </label>
+       
+       
+         <div class="form-group col-md-3">
+         <label >TVA
+        </label> 
+        <div class="input-group">
         <input name="client_TVA" #client_TVA="ngModel" [(ngModel)]="service.formData.client_TVA" class="form-control">
-     </div></div>
+        <div class="input-group-prepend">
+          <div class="input-group-text">
+          %
+          </div>
+      </div>
+          </div>
+     </div>
+    </div>
       <div class="form-group ">
         <label >Email
         </label>
@@ -87,7 +96,7 @@
 
   <div class="form-group">
     <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i> Enregistrer</button>
-    <a  class="btn btn-outline-dark ml-1" routerLink="/factures"><i class="fa fa-table"></i> Afficher</a>
+    <a  class="btn btn-outline-dark ml-1" routerLink="/clients"><i class="fa fa-table"></i> Afficher</a>
   </div>
  
 </form>

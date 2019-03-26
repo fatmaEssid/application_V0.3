@@ -9,10 +9,10 @@
     <div class="form-group col-md-6">
     <label >Est-ce que le client est médiateur?
     </label>
-       <select name="client_mediator" #client_mediator="ngModel" [(ngModel)]="formData.client_mediator" class="form-control">
-        <option value="0">-select-</option> 
-        <option value="true">Oui</option>
-        <option value="false">Non</option>
+       <select name="client_mediator" #client_mediator="ngModel" [(ngModel)]="formData.client_mediator" class="form-control" readonly>
+       
+        <option value="true" >Oui</option>
+       
        </select>
   </div>
  
@@ -26,7 +26,7 @@
 
 
       <select name="final_client_id" #final_client_id="ngModel" [(ngModel)]="formData.final_client_id" class="form-control" (change)="updateName($event.target)"  [class.is-invalid]="!isValid && formData.final_client_id==0">
-          <option value="1">-select-</option> 
+          <option value="0">-select-</option> 
           <option *ngFor="let c of finalClientList" value="{{c.final_client_id}}">{{c.final_client_nom}}</option>
          </select>
     </div>

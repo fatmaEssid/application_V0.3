@@ -3,6 +3,12 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { HttpClientModule,} from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
+
+// material angular 
+import {MatCardModule} from '@angular/material/card';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatInputModule} from '@angular/material/input';
+import {MatMomentDateModule} from '@angular/material-moment-adapter';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatTreeModule, MatIconModule} from '@angular/material';
 import {MatTableModule} from '@angular/material/table';
@@ -21,9 +27,12 @@ import { ClientsComponent } from './clients/clients.component';
 import { ClientComponent } from './clients/client/client.component';
 import { ClientDetailsComponent } from './clients/client-details/client-details.component';
 import { FinalClientComponent } from './final-client/final-client.component';
-import { ContratComponent } from './contrat/contrat.component';
+import { ContratComponent } from './contrats/contrat/contrat.component';
 import { ClientService } from './shared/client.service';
-import {MatButtonModule,MatSnackBarModule} from '@angular/material'
+import {MatButtonModule,MatSnackBarModule} from '@angular/material';
+import { FinalClientsComponent } from './final-client/final-clients/final-clients.component';
+import { ContratsComponent } from './contrats/contrats.component';
+import { DatePickerModule } from '@syncfusion/ej2-angular-calendars';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +44,10 @@ import {MatButtonModule,MatSnackBarModule} from '@angular/material'
     ClientComponent,
     ClientDetailsComponent,
     FinalClientComponent,
-    ContratComponent
+    ContratComponent,
+    FinalClientsComponent,
+    ContratsComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -50,10 +62,15 @@ import {MatButtonModule,MatSnackBarModule} from '@angular/material'
     MatTableModule,
     MatNativeDateModule,
     ReactiveFormsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    DatePickerModule,
+    MatInputModule,
+    MatMomentDateModule,
+    MatDatepickerModule,MatCardModule
 
   ],
-  entryComponents:[FactureDetailsComponent, ClientDetailsComponent],
+
+  entryComponents:[FactureDetailsComponent, ClientDetailsComponent,ContratComponent],
   providers: [FactureService,ClientService],
   bootstrap: [AppComponent]
 })

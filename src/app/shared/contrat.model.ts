@@ -6,4 +6,6 @@ export class Contrat {
      date_fin:Date;
      final_client_id:number;
      client_id:number;
+     final_client_nom:string;
+     client_nom:string;
 }
